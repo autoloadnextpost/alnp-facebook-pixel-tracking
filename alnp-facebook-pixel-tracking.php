@@ -1,11 +1,14 @@
 <?php
 /*
  * Plugin Name: Auto Load Next Post: Facebook Pixel Tracking
- * Plugin URI:  https://github.com/AutoLoadNextPost/alnp-facebook-pixel-tracking
- * Version:     1.0.0
+ * Plugin URI: https://github.com/AutoLoadNextPost/alnp-facebook-pixel-tracking
+ * Version: 1.0.0
  * Description: Track your page views using Facebook Pixel with Auto Load Next Post.
- * Author:      Sébastien Dumont
- * Author URI:  https://sebastiendumont.com
+ * Author: Auto Load Next Post
+ * Author URI: https://autoloadnextpost.com
+ * Developer: Sébastien Dumont
+ * Developer URI: https://sebastiendumont.com
+ * GitHub Plugin URI: https://github.com/AutoLoadNextPost/alnp-facebook-pixel-tracking
  *
  * Text Domain: alnp-facebook-pixel-tracking
  * Domain Path: /languages/
