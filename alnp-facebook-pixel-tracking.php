@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: Facebook Pixel Tracking for Auto Load Next Post
+ * Plugin Name: Auto Load Next Post: Facebook Pixel Tracking
  * Plugin URI:  https://github.com/AutoLoadNextPost/alnp-facebook-pixel-tracking
  * Version:     1.0.0
  * Description: Track your page views using Facebook Pixel with Auto Load Next Post.
