@@ -14,7 +14,7 @@
  * Domain Path: /languages/
  *
  * Requires at least: 4.5
- * Tested up to: 4.9.1
+ * Tested up to: 4.9.2
  *
  * Copyright: © 2018 Sébastien Dumont
  * License: GNU General Public License v3.0
@@ -32,6 +32,14 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 		 * @since  1.0.0
 		 */
 		public static $version = '1.0.0';
+
+		/**
+		 * Required Auto Load Next Post Version
+		 *
+		 * @access public
+		 * @since  1.0.0
+		 */
+		public $required_alnp = '1.4.8';
 
 		/**
 		 * @var ALNP_FB_Pixel_Tracking - the single instance of the class.
@@ -97,10 +105,36 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 		 * @since  1.0.0
 		 */
 		private function init_hooks() {
-			add_action( 'init', array( $this, 'init_plugin' ), 0 );
+			add_action( 'plugin_loaded', array( $this, 'check_alnp_installed' ) );
+			add_action( 'init', array( $this, 'load_text_domain' ), 0 );
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'alnp_enqueue_scripts' ) );
-		} // END load_plugin()
+		} // END init_hooks()
+
+		/**
+		 * Checks if Auto Load Next Post is installed.
+		 *
+		 * @access public
+		 * @since  1.0.0
+		 * @return bool
+		 */
+		public function check_alnp_installed() {
+			if ( ! defined( 'AUTO_LOAD_NEXT_POST_VERSION' ) || version_compare( AUTO_LOAD_NEXT_POST_VERSION, $this->required_alnp, '<' ) ) {
+				add_action( 'admin_notices', array( $this, 'alnp_not_installed' ) );
+				return false;
+			}
+		} // END check_alnp_installed()
+
+		/**
+		 * Auto Load Next Post is Not Installed Notice.
+		 *
+		 * @access public
+		 * @since  1.0.0
+		 * @return void
+		 */
+		public function alnp_not_installed() {
+			echo '<div class="error"><p>' . sprintf( __( 'Auto Load Next Post: Facebook Pixel Tracking requires $1%s v$2%s or higher to be installed.', 'alnp-facebook-pixel-tracking' ), '<a href="https://autoloadnextpost.com/" target="_blank">Auto Load Next Post</a>', $this->required_alnp ) . '</p></div>';
+		} // END alnp_not_installed()
 
 		/**
 		 * Get the Plugin URL.
@@ -115,16 +149,15 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 		} // END plugin_url()
 
 		/**
-		 * Initialize the plugin if ready.
+		 * Load the plugin text domain once the plugin has initialized.
 		 *
 		 * @access public
 		 * @since  1.0.0
 		 * @return void
 		 */
-		public function init_plugin() {
-			// Load text domain.
+		public function load_text_domain() {
 			load_plugin_textdomain( 'alnp-facebook-pixel-tracking', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-		} // END init_plugin()
+		} // END load_text_domain()
 
 		/**
 		 * Load JS only on the front end for a single post.
@@ -139,7 +172,8 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 				wp_enqueue_script( 'alnp-facebook-pixel-tracking' );
 
 				wp_localize_script( 'alnp-facebook-pixel-tracking', 'alnp_fb_pixel', array(
-					'pluginVersion' => self::$version
+					'alnpVersion'   => AUTO_LOAD_NEXT_POST_VERSION,
+					'pluginVersion' => self::$version,
 				));
 			}
 		} // END alnp_enqueue_scripts()
