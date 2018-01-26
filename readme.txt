@@ -1,9 +1,9 @@
 === Facebook Pixel Tracking for Auto Load Next Post ===
-Contributors: sebd86
-Tags: autoloadnextpost, Analytics, Facebook Pixel, Facebook Conversion Pixel, Facebook Pixel Events, Facebook Standard Events, Page Tracking
+Contributors: autoloadnextpost
+Tags: Auto Load Next Post, Analytics, Facebook Pixel, Facebook Conversion Pixel, Facebook Pixel Events, Facebook Standard Events, Page Tracking
 Requires PHP: 5.6+
 Requires at least: 4.5
-Tested up to: 4.9.1
+Tested up to: 4.9.2
 Stable tag: 1.0.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
