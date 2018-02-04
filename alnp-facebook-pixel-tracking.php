@@ -168,7 +168,7 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 		 */
 		public function alnp_enqueue_scripts() {
 			if ( is_singular() && in_array( get_post_type(), $this->allowed_post_types() ) ) {
-				wp_register_script( 'alnp-facebook-pixel-tracking', $this->plugin_url() . '/assets/js/alnp-facebook-pixel-tracking.js', array( 'jquery' ), '1.0.0' );
+				wp_register_script( 'alnp-facebook-pixel-tracking', $this->plugin_url() . '/assets/js/alnp-facebook-pixel-tracking.js', array( 'jquery' ), self::$version );
 				wp_enqueue_script( 'alnp-facebook-pixel-tracking' );
 
 				wp_localize_script( 'alnp-facebook-pixel-tracking', 'alnp_fb_pixel', array(

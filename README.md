@@ -1,6 +1,6 @@
 # Facebook Pixel Tracking for Auto Load Next Post
 
-Track your page views using Facebook Pixel with Auto Load Next Post.
+Track your pageviews using Facebook Pixel with Auto Load Next Post.
 
 ### Requires
 
