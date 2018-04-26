@@ -1,4 +1,5 @@
 # Grunt
+/.wordpress-org/
 /releases/
 /node_modules/
 npm-debug.log
