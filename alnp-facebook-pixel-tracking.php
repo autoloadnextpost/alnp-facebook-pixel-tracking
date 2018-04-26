@@ -2,19 +2,18 @@
 /*
  * Plugin Name: Auto Load Next Post: Facebook Pixel Tracking
  * Plugin URI: https://github.com/AutoLoadNextPost/alnp-facebook-pixel-tracking
- * Version: 1.0.0
+ * Version: 1.0.1
  * Description: Track your page views using Facebook Pixel with Auto Load Next Post.
  * Author: Auto Load Next Post
  * Author URI: https://autoloadnextpost.com
  * Developer: Sébastien Dumont
  * Developer URI: https://sebastiendumont.com
  * GitHub Plugin URI: https://github.com/AutoLoadNextPost/alnp-facebook-pixel-tracking
- *
  * Text Domain: alnp-facebook-pixel-tracking
  * Domain Path: /languages/
  *
  * Requires at least: 4.5
- * Tested up to: 4.9.2
+ * Tested up to: 4.9.5
  *
  * Copyright: © 2018 Sébastien Dumont
  * License: GNU General Public License v3.0
@@ -22,24 +21,8 @@
  */
 
 if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
+
 	class ALNP_FB_Pixel_Tracking {
-
-		/**
-		 * Plugin Version
-		 *
-		 * @access public
-		 * @static
-		 * @since  1.0.0
-		 */
-		public static $version = '1.0.0';
-
-		/**
-		 * Required Auto Load Next Post Version
-		 *
-		 * @access public
-		 * @since  1.0.0
-		 */
-		public $required_alnp = '1.4.8';
 
 		/**
 		 * @var ALNP_FB_Pixel_Tracking - the single instance of the class.
@@ -49,6 +32,23 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 		 * @since 1.0.0
 		 */
 		protected static $_instance = null;
+
+		/**
+		 * Plugin Version
+		 *
+		 * @access public
+		 * @static
+		 * @since  1.0.0
+		 */
+		public static $version = '1.0.1';
+
+		/**
+		 * Required Auto Load Next Post Version
+		 *
+		 * @access public
+		 * @since  1.0.0
+		 */
+		public $required_alnp = '1.4.10';
 
 		/**
 		 * Main ALNP_FB_Pixel_Tracking Instance.
@@ -66,7 +66,7 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 				self::$_instance = new self();
 			}
 			return self::$_instance;
-		}
+		} // END instance()
 
 		/**
 		 * Cloning is forbidden.
@@ -75,8 +75,8 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 		 * @since  1.0.0
 		 */
 		public function __clone() {
-			_doing_it_wrong( __FUNCTION__, __( 'Foul!', 'alnp-facebook-pixel-tracking' ), self::$version );
-		}
+			_doing_it_wrong( __FUNCTION__, __( 'Cloning this object is forbidden.', 'alnp-facebook-pixel-tracking' ), self::$version );
+		} // END __clone()
 
 		/**
 		 * Unserializing instances of this class is forbidden.
@@ -85,8 +85,8 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 		 * @since  1.0.0
 		 */
 		public function __wakeup() {
-			_doing_it_wrong( __FUNCTION__, __( 'Foul!', 'alnp-facebook-pixel-tracking' ), self::$version );
-		}
+			_doing_it_wrong( __FUNCTION__, __( 'Unserializing instances of this class is forbidden.', 'alnp-facebook-pixel-tracking' ), self::$version );
+		} // END __wakeup()
 
 		/**
 		 * Load the plugin.
@@ -96,18 +96,23 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 		 */
 		public function __construct() {
 			$this->init_hooks();
-		}
+		} // END __construct()
 
 		/**
 		 * Initialize hooks.
 		 *
-		 * @access private
-		 * @since  1.0.0
+		 * @access  private
+		 * @since   1.0.0
+		 * @version 1.0.1
 		 */
 		private function init_hooks() {
-			add_action( 'plugin_loaded', array( $this, 'check_alnp_installed' ) );
-			add_action( 'init', array( $this, 'load_text_domain' ), 0 );
+			// Check if the required version of Auto Load Next Post is installed.
+			add_action( 'auto_load_next_post_loaded', array( $this, 'check_required_version' ) );
 
+			// Load plugin textdomain.
+			add_action( 'init', array( $this, 'load_plugin_textdomain' ), 0 );
+
+			// Enqueue Javascript for Facebook Pixel Tracking.
 			add_action( 'wp_enqueue_scripts', array( $this, 'alnp_enqueue_scripts' ) );
 		} // END init_hooks()
 
@@ -118,12 +123,12 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 		 * @since  1.0.0
 		 * @return bool
 		 */
-		public function check_alnp_installed() {
+		public function check_required_version() {
 			if ( ! defined( 'AUTO_LOAD_NEXT_POST_VERSION' ) || version_compare( AUTO_LOAD_NEXT_POST_VERSION, $this->required_alnp, '<' ) ) {
 				add_action( 'admin_notices', array( $this, 'alnp_not_installed' ) );
 				return false;
 			}
-		} // END check_alnp_installed()
+		} // END check_required_version()
 
 		/**
 		 * Auto Load Next Post is Not Installed Notice.
@@ -133,7 +138,7 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 		 * @return void
 		 */
 		public function alnp_not_installed() {
-			echo '<div class="error"><p>' . sprintf( __( 'Auto Load Next Post: Facebook Pixel Tracking requires $1%s v$2%s or higher to be installed.', 'alnp-facebook-pixel-tracking' ), '<a href="https://autoloadnextpost.com/" target="_blank">Auto Load Next Post</a>', $this->required_alnp ) . '</p></div>';
+			echo '<div class="error"><p>' . sprintf( __( 'Auto Load Next Post: Facebook Pixel Tracking requires %1$s v%2$s or higher to be installed.', 'alnp-facebook-pixel-tracking' ), '<a href="https://autoloadnextpost.com/" target="_blank">Auto Load Next Post</a>', $this->required_alnp ) . '</p></div>';
 		} // END alnp_not_installed()
 
 		/**
@@ -155,9 +160,9 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 		 * @since  1.0.0
 		 * @return void
 		 */
-		public function load_text_domain() {
+		public function load_plugin_textdomain() {
 			load_plugin_textdomain( 'alnp-facebook-pixel-tracking', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-		} // END load_text_domain()
+		} // END load_plugin_textdomain()
 
 		/**
 		 * Load JS only on the front end for a single post.

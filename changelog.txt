@@ -1,4 +1,7 @@
 *** Facebook Pixel Tracking for Auto Load Next Post - Changelog ***
 
+26th April 2018 - Version 1.0.1
+* Minor code base corrections and improvements to be fully compatible with Auto Load Next Post v1.4.10 and up.
+
 16th January 2018 - Version 1.0.0
 * Initial version.
