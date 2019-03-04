@@ -1,11 +1,10 @@
 === Facebook Pixel Tracking for Auto Load Next Post ===
 Contributors: autoloadnextpost, sebd86
-Donate link: https://autoloadnextpost.com/donate/
 Tags: Auto Load Next Post, Analytics, Facebook Pixel, Facebook Conversion Pixel, Facebook Pixel Events, Facebook Standard Events, Page Tracking
-Requires PHP: 5.6+
+Requires PHP: 5.6
 Requires at least: 4.5
-Tested up to: 4.9.5
-Stable tag: 1.0.1
+Tested up to: 5.1
+Stable tag: 2.0.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,24 +12,44 @@ Track your pageviews using Facebook Pixel with Auto Load Next Post.
 
 == Description ==
 
-For those of you who wish to also track your pageviews with Facebook Pixel this add-on for Auto Load Next Post will do just the trick. All you have to do is activate the plugin and your good to go so long as you already have Facebook Pixel installed on your site.
+This add-on enables to track your pageviews using Facebook Pixel with Auto Load Next Post.
 
 **Requires**
 
 * [Auto Load Next Post](https://wordpress.org/plugins/auto-load-next-post/) v1.4.10 or above.
-* Facebook Pixel must be installed.
+* [Official Facebook Pixel](https://wordpress.org/plugins/official-facebook-pixel/) plugin installed.
 
-> #### Auto Load Next Post Pro
-> There's an even better version of the plugin coming out soon with the following extra features:<br />
->
-> - Custom Post Type Support<br />
-> - Media Attachments Support<br />
-> - Priority Email Support<br />
-> - and many more features to follow.
->
-> [More information](https://autoloadnextpost.com/pro/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
+= Auto Load Next Post Pro =
+
+Want more? _I bet you do._ A premium extension is currently in development with some of the most highly requested features.<br />
+
+* Page and Media Attachment Support<br />
+* Custom Post Type Support<br />
+* Paginated Posts Supported<br />
+* Exclude Post Formats<br />
+* Limit Posts per Session<br />
+* Query Posts by Category, Tag, Related or Custom Query<br />
+* Exclude User Roles and Specific Users<br />
+* Pre-Query Posts Ready to Load<br />
+* Toggle Comments to Hide or Show<br />
+* Multilingual Support for WPML and Polylang<br />
+
+On top of that you also get:
+* Email Support<br />
+* and many more features and add-ons to follow.
+
+[Find out more](https://autoloadnextpost.com/pro/?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
 
 This plugin is created and maintained by [Sébastien Dumont](https://sebastiendumont.com).
+
+**More information**
+
+* [Visit the Auto Load Next Post website](https://autoloadnextpost.com/?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=readme).
+* [View the documentation](https://github.com/autoloadnextpost/alnp-documentation) for detailed guides and code snippets.
+* [Subscribe to updates](http://eepurl.com/bvLz2H)
+* [Follow on Twitter](https://twitter.com/autoloadnxtpost)
+* [Like us on Facebook](https://www.facebook.com/autoloadnextpost/)
+* [GitHub](https://github.com/autoloadnextpost/auto-load-next-post)
 
 == Installation ==
 
@@ -42,17 +61,18 @@ Installing "Facebook Pixel Tracking for Auto Load Next Post" can be done either 
 
 == Frequently Asked Questions ==
 
+= Where can I find more information on Facebook Pixel? =
+
+You can find more information on the [Facebook Pixel](https://www.facebook.com/business/learn/facebook-ads-pixel).
+
 = How do I enable the tracking once installed? =
 
-Once the plugin is activated there is no need to do anything. Facebook Pixel will now track each pageview.
+Once this plugin is activated, that's it. Facebook Pixel will now track each pageview.
 
 == Changelog ==
-= 1.0.1 : 26th April 2018 =
-* Minor code base corrections and improvements to be fully compatible with Auto Load Next Post v1.4.10 and up.
+= 2.0.0 : 5th March 2019 =
+* Compatible: WordPress 5.1
+* Compatible: Auto Load Next Post 1.5.6
 
 = 1.0.0 : 4th February 2018 =
 * Initial Version
-
-== Upgrade Notice ==
-= 1.0.1 : 26th April 2018 =
-* Minor code base corrections and improvements to be fully compatible with Auto Load Next Post v1.4.10 and up.

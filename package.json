@@ -1,35 +1,51 @@
 {
-  "title": "Auto Load Next Post: Facebook Pixel Tracking",
   "name": "alnp-facebook-pixel-tracking",
-  "author": "AutoLoadNextPost",
-  "license": "GPL-3.0",
-  "version": "1.0.1",
-  "description": "Track your pageviews using Facebook Pixel with Auto Load Next Post.",
+  "title": "Facebook Pixel Tracking for Auto Load Next Post",
+  "version": "2.0.0",
+  "private": false,
+  "contributors": [
+    "autoloadnextpost",
+    "sebd86"
+  ],
+  "author": "Sébastien Dumont",
+  "author_uri": "https://sebastiendumont.com",
   "homepage": "https://autoloadnextpost.com/",
-  "main": "Gruntfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AutoLoadNextPost/alnp-facebook-pixel-tracking"
+    "url": "https://github.com/autoloadnextpost/alnp-facebook-pixel-tracking"
   },
   "bugs": {
-    "url": "https://github.com/AutoLoadNextPost/alnp-facebook-pixel-tracking/issues"
+    "url": "https://github.com/autoloadnextpost/alnp-facebook-pixel-tracking/issues"
   },
+  "requires": "4.5",
+  "requires_php": "5.6",
+  "tested_up_to": "5.1",
+  "required_alnp": "1.4.10",
+  "license": "GPL-2.0",
+  "copyright": "Copyright (c) 2019, Sébastien Dumont",
+  "description": "Track your pageviews using Facebook Pixel with Auto Load Next Post.",
+  "tags": "",
+  "keywords": [
+    "facebook",
+    "pixel",
+    "tracking"
+  ],
   "dependencies": {
-    "grunt": "^1.0.2"
+    "grunt": "^1.0.3"
   },
   "devDependencies": {
     "grunt-checktextdomain": "~1.0.1",
-    "grunt-contrib-clean": "~1.1.0",
+    "grunt-contrib-clean": "~2.0.0",
     "grunt-contrib-compress": "^1.4.3",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jshint": "~1.1.0",
-    "grunt-contrib-uglify": "~1.0.0",
+    "grunt-contrib-jshint": "~2.0.0",
+    "grunt-contrib-uglify": "~4.0.0",
     "grunt-newer": "~1.3.0",
     "grunt-potomo": "~3.5.0",
     "grunt-text-replace": "^0.4.0",
     "grunt-wp-i18n": "~1.0.2",
-    "jshint-stylish": "~2.2.0",
-    "load-grunt-tasks": "~3.5.2"
+    "jshint-stylish": "~2.2.1",
+    "load-grunt-tasks": "~4.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

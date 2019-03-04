@@ -7,6 +7,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		// Minify JavaScript
 		uglify: {
 			options: {
 				compress: {
@@ -29,6 +30,7 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// Check for Javascript errors
 		jshint: {
 			options: {
 				reporter: require('jshint-stylish'),
@@ -50,23 +52,29 @@ module.exports = function(grunt) {
 		makepot: {
 			target: {
 				options: {
-					type: 'wp-plugin', // Type of project (wp-plugin or wp-theme).
-					domainPath: 'languages', // Where to save the POT file.
-					mainFile: '<%= pkg.name %>.php', // Main project file.
-					potFilename: '<%= pkg.name %>.pot', // Name of the POT file.
+					cwd: '',
+					domainPath: 'languages',                                  // Where to save the POT file.
+					exclude: [
+						'releases',
+						'node_modules',
+					],
+					mainFile: '<%= pkg.name %>.php',                          // Main project file.
+					potComments: '# Copyright (c) {{year}} Sébastien Dumont', // The copyright at the beginning of the POT file.
+					potFilename: '<%= pkg.name %>.pot',                       // Name of the POT file.
 					potHeaders: {
-						'Report-Msgid-Bugs-To': 'https://github.com/AutoLoadNextPost/alnp-facebook-pixel-tracking/issues',
+						'poedit': true,                                       // Includes common Poedit headers.
+						'x-poedit-keywordslist': true,                        // Include a list of all possible gettext functions.
+						'Report-Msgid-Bugs-To': 'https://github.com/autoloadnextpost/alnp-facebook-pixel-tracking/issues',
 						'language-team': 'Sébastien Dumont <mailme@sebastiendumont.com>',
 						'language': 'en_US'
 					},
-					exclude: [
-						'releases',
-						'node_modules'
-					]
+					type: 'wp-plugin',                                        // Type of project.
+					updateTimestamp: true,                                    // Whether the POT-Creation-Date should be updated without other changes.
 				}
 			}
 		},
 
+		// Check strings for localization issues
 		checktextdomain: {
 			options:{
 				text_domain: '<%= pkg.name %>', // Project text domain.
@@ -118,7 +126,9 @@ module.exports = function(grunt) {
 			Version: {
 				src: [
 					'readme.txt',
-					'<%= pkg.name %>.php'
+					'<%= pkg.name %>.php',
+					'includes/admin/*.php',
+					'includes/admin/views/*.php'
 				],
 				overwrite: true,
 				replacements: [
@@ -131,8 +141,20 @@ module.exports = function(grunt) {
 						to: "Version: <%= pkg.version %>"
 					},
 					{
-						from: /public \$version = \'.*.'/m,
-						to: "public $version = '<%= pkg.version %>'"
+						from: /public static \$version = \'.*.'/m,
+						to: "public static $version = '<%= pkg.version %>'"
+					},
+					{
+						from: /public static \$required_alnp = \'.*.'/m,
+						to: "public static $required_alnp = '<%= pkg.required_alnp %>'"
+					},
+					{
+						from: '@@textdomain',
+						to: "<%= pkg.name %>"
+					},
+					{
+						from: '@@title',
+						to: "<%= pkg.title %>"
 					}
 				]
 			}
