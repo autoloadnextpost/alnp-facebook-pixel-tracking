@@ -12,7 +12,7 @@
 
 **Contributors:** autoloadnextpost, sebd86  
 **Donate link:** https://sebdumont.xyz/donate/  
-**Tags:** blocks, gutenberg, gallery, page builder, gutenberg blocks, editor, photo gallery  
+**Tags:** Auto Load Next Post, Analytics, Facebook Pixel, Facebook Conversion Pixel, Facebook Pixel Events, Facebook Standard Events, Page Tracking  
 **Requires at least:** 4.5  
 **Requires PHP:** 5.6  
 **Tested up to:** 5.1  
