@@ -72,9 +72,12 @@ You can find more information on the [Facebook Pixel](https://www.facebook.com/b
 Once this plugin is activated, that's it. Facebook Pixel will now track each pageview.
 
 == Changelog ==
-= 2.0.0 : 5th March 2019 =
-* Compatible: WordPress 5.1
-* Compatible: Auto Load Next Post 1.5.6
+
+= 2.0.0 : 29th May 2019 =
+
+* Compatible: WordPress 5.2.1
+* Compatible: Auto Load Next Post 1.5 and over.
 
 = 1.0.0 : 4th February 2018 =
+
 * Initial Version

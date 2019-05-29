@@ -1,8 +1,9 @@
 *** Facebook Pixel Tracking for Auto Load Next Post - Changelog ***
 
-5th March 2019 - Version 2.0.0
-* Compatible: WordPress 5.1
-* Compatible: Auto Load Next Post 1.5.6
+29th May 2019 - Version 2.0.0
+
+* Compatible: WordPress 5.2.1
+* Compatible: Auto Load Next Post 1.5 and over.
 
 16th January 2018 - Version 1.0.0
 * Initial version.
