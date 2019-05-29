@@ -7,6 +7,23 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		// Update developer dependencies
+		devUpdate: {
+			packages: {
+				options: {
+					packageJson: null,
+					packages: {
+						devDependencies: true,
+						dependencies: false
+					},
+					reportOnlyPkgs: [],
+					reportUpdated: false,
+					semver: true,
+					updateType: 'force'
+				}
+			}
+		},
+
 		// Minify JavaScript
 		uglify: {
 			options: {
@@ -123,9 +140,8 @@ module.exports = function(grunt) {
 
 		// Bump version numbers (replace with version in package.json)
 		replace: {
-			Version: {
+			php: {
 				src: [
-					'readme.txt',
 					'<%= pkg.name %>.php',
 					'includes/admin/*.php',
 					'includes/admin/views/*.php'
@@ -157,35 +173,47 @@ module.exports = function(grunt) {
 						to: "<%= pkg.title %>"
 					}
 				]
+			},
+			readme: {
+				src: [ 'readme.txt' ],
+				overwrite: true,
+				replacements: [
+					{
+						from: /Stable tag:(\*\*|)(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
+						to: 'Stable tag:$1$2<%= pkg.version %>$3'
+					},
+					{
+						from: /Tested up to:(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
+						to: 'Tested up to:$1<%= pkg.tested_up_to %>'
+					}
+				]
 			}
 		},
 
 		// Copies the plugin to create deployable plugin.
 		copy: {
-			deploy: {
-				src: [
-					'**',
-					'!.*',
-					'!*.md',
-					'!.*/**',
-					'.htaccess',
-					'!Gruntfile.js',
-					'!package.json',
-					'!package-lock.json',
-					'!releases/**',
-					'!node_modules/**',
-					'!.DS_Store',
-					'!npm-debug.log',
-					'!*.sh',
-					'!*.zip',
-					'!*.jpg',
-					'!*.jpeg',
-					'!*.gif',
-					'!*.png'
-				],
-				dest: '<%= pkg.name %>',
-				expand: true,
-				dot: true
+			build: {
+				files: [
+					{
+						expand: true,
+						src: [
+							'**',
+							'!.*',
+							'!**/*.{gif,jpg,jpeg,js,json,log,md,php,png,scss,sh,txt,xml,zip}',
+							'!.*/**',
+							'!.DS_Store',
+							'!.htaccess',
+							'!<%= pkg.name %>-git/**',
+							'!<%= pkg.name %>-svn/**',
+							'!node_modules/**',
+							'!releases/**',
+							'<%= pkg.name %>.php',
+							'readme.txt'
+						],
+						dest: 'build/',
+						dot: true
+					}
+				]
 			}
 		},
 
@@ -199,7 +227,7 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: './<%= pkg.name %>/',
+						cwd: './build/',
 						src: '**',
 						dest: '<%= pkg.name %>'
 					}
@@ -208,17 +236,25 @@ module.exports = function(grunt) {
 		},
 
 		// Deletes the deployable plugin folder once zipped up.
-		clean: [ '<%= pkg.name %>' ]
+		clean: {
+			build: [ 'build/' ]
+		}
 	});
 
 	// Set the default grunt command to run test cases.
 	grunt.registerTask( 'default', [ 'test' ] );
 
+	// Checks for developer dependencie updates.
+	grunt.registerTask( 'check', [ 'devUpdate' ] );
+
 	// Checks for errors with the javascript and text domain.
 	grunt.registerTask( 'test', [ 'jshint', 'checktextdomain' ]);
 
-	// Updates version and minify javascript and finaly runs i18n tasks.
-	grunt.registerTask( 'dev', [ 'replace', 'newer:uglify', 'makepot' ]);
+	// Minify javascript and finaly run i18n tasks.
+	grunt.registerTask( 'build', [ 'newer:uglify', 'update-pot' ]);
+
+	// Update version of plugin.
+	grunt.registerTask( 'version', [ 'replace' ] );
 
 	/**
 	 * Run i18n related tasks.
@@ -232,5 +268,5 @@ module.exports = function(grunt) {
 	 * Creates a deployable plugin zipped up ready to upload
 	 * and install on a WordPress installation.
 	 */
-	grunt.registerTask( 'zip', [ 'copy', 'compress', 'clean' ]);
+	grunt.registerTask( 'zip', [ 'copy:build', 'compress', 'clean:build' ]);
 };
