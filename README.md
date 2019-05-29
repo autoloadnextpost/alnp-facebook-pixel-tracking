@@ -15,7 +15,7 @@
 **Tags:** Auto Load Next Post, Analytics, Facebook Pixel, Facebook Conversion Pixel, Facebook Pixel Events, Facebook Standard Events, Page Tracking  
 **Requires at least:** 4.5  
 **Requires PHP:** 5.6  
-**Tested up to:** 5.1  
+**Tested up to:** 5.2.1  
 **Stable tag:** 2.0.0  
 **License:** GPL v2 or later  
 
