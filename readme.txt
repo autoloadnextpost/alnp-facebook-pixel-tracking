@@ -12,14 +12,14 @@ Track your pageviews using Facebook Pixel with Auto Load Next Post.
 
 == Description ==
 
-This add-on enables to track your pageviews using Facebook Pixel with Auto Load Next Post.
+This add-on enables to track your pageviews using Facebook Pixel with [Auto Load Next Post](https://wordpress.org/plugins/auto-load-next-post/).
 
 **Requires**
 
 * [Auto Load Next Post](https://wordpress.org/plugins/auto-load-next-post/) v1.4.10 or above.
 * [Official Facebook Pixel](https://wordpress.org/plugins/official-facebook-pixel/) plugin installed.
 
-= Auto Load Next Post Pro =
+## Auto Load Next Post Pro
 
 Want more? _I bet you do._ A premium extension is currently in development with some of the most highly requested features.<br />
 
@@ -34,13 +34,12 @@ Want more? _I bet you do._ A premium extension is currently in development with 
 * Toggle Comments to Hide or Show<br />
 * Multilingual Support for WPML and Polylang<br />
 
-On top of that you also get:
+On top of that you also get:<br />
+
 * Email Support<br />
 * and many more features and add-ons to follow.
 
 [Find out more](https://autoloadnextpost.com/pro/?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
-
-This plugin is created and maintained by [Sébastien Dumont](https://sebastiendumont.com).
 
 **More information**
 
@@ -48,8 +47,11 @@ This plugin is created and maintained by [Sébastien Dumont](https://sebastiendu
 * [View the documentation](https://github.com/autoloadnextpost/alnp-documentation) for detailed guides and code snippets.
 * [Subscribe to updates](http://eepurl.com/bvLz2H)
 * [Follow on Twitter](https://twitter.com/autoloadnxtpost)
+* [Follow on Instagram](https://instagram.com/autoloadnextpost)
 * [Like us on Facebook](https://www.facebook.com/autoloadnextpost/)
 * [GitHub](https://github.com/autoloadnextpost/auto-load-next-post)
+
+This plugin is created and maintained by [Sébastien Dumont](https://sebastiendumont.com).
 
 == Installation ==
 
