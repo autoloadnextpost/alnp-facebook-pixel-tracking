@@ -1,6 +1,6 @@
 <?php
 /**
- * Auto Load Next Post: Facebook Pixel Tracking - Feedback Notice
+ * Auto Load Next Post: Pixel Tracking - Feedback Notice
  *
  * Prompts users to give a review of the plugin on WordPress.org after a period of usage.
  *
@@ -318,7 +318,7 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking_Feedback' ) ) {
 new ALNP_FB_Pixel_Tracking_Feedback(
 	array(
 		'slug'       => 'alnp_fbpixel_plugin_feedback',
-		'name'       => __( 'Facebook Pixel Tracking for Auto Load Next Post', 'alnp-facebook-pixel-tracking' ),
+		'name'       => __( 'Pixel Tracking for Auto Load Next Post', 'alnp-facebook-pixel-tracking' ),
 		'time_limit' => WEEK_IN_SECONDS,
 	)
 );

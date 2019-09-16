@@ -1,4 +1,4 @@
-*** Auto Load Next Post: Facebook Pixel Tracking - Changelog ***
+*** Auto Load Next Post: Pixel Tracking - Changelog ***
 
 16th September 2019 - Version 2.0.1
 

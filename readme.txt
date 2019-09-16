@@ -55,7 +55,7 @@ This plugin is created and maintained by [Sébastien Dumont](https://sebastiendu
 
 == Installation ==
 
-Installing "Facebook Pixel Tracking for Auto Load Next Post" can be done either by searching for "Auto Load Next Post" via the "Plugins > Add New" screen in your WordPress dashboard, or by using the following steps:
+Installing "Pixel Tracking for Auto Load Next Post" can be done either by searching for "Auto Load Next Post" via the "Plugins > Add New" screen in your WordPress dashboard, or by using the following steps:
 
 1. Download the plugin via WordPress.org
 2. Upload the ZIP file through the 'Plugins > Add New > Upload' screen in your WordPress dashboard.

@@ -1,10 +1,10 @@
 # # Copyright (c) {2019} Sébastien Dumont
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto Load Next Post: Facebook Pixel Tracking 2.0.0\n"
+"Project-Id-Version: Auto Load Next Post: Pixel Tracking 2.0.1\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/autoloadnextpost/alnp-facebook-pixel-tracking/issues\n"
-"POT-Creation-Date: 2019-03-04 22:21:53+00:00\n"
+"POT-Creation-Date: 2019-09-16 17:37:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,7 +49,7 @@ msgid "Community Support"
 msgstr ""
 
 #: includes/admin/alnp-facebook-pixel-tracking-admin.php:56
-msgid "Review Facebook Pixel Tracking for Auto Load Next Post on WordPress.org"
+msgid "Review Pixel Tracking for Auto Load Next Post on WordPress.org"
 msgstr ""
 
 #: includes/admin/alnp-facebook-pixel-tracking-admin.php:56
@@ -133,7 +133,7 @@ msgid "No thanks / I already have"
 msgstr ""
 
 #: includes/admin/class-alnp-facebook-pixel-tracking-feedback.php:321
-msgid "Facebook Pixel Tracking for Auto Load Next Post"
+msgid "Pixel Tracking for Auto Load Next Post"
 msgstr ""
 
 #: includes/admin/views/html-notice-alnp-not-installed.php:18
@@ -151,7 +151,7 @@ msgid "Install Auto Load Next Post"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "Auto Load Next Post: Facebook Pixel Tracking"
+msgid "Auto Load Next Post: Pixel Tracking"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

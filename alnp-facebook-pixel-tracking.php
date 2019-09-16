@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: Auto Load Next Post: Facebook Pixel Tracking
+ * Plugin Name: Auto Load Next Post: Pixel Tracking
  * Plugin URI: https://wordpress.org/plugins/alnp-facebook-pixel-tracking/
  * Description: Track your page views using Facebook Pixel with Auto Load Next Post.
  * Author: Auto Load Next Post
@@ -11,16 +11,16 @@
  * Text Domain: alnp-facebook-pixel-tracking
  * Domain Path: /languages/
  *
- * Auto Load Next Post: Facebook Pixel Tracking is free software: you 
+ * Auto Load Next Post: Pixel Tracking is free software: you 
  * can redistribute it and/or modify it under the terms of the 
  * GNU General Public License as published by the Free Software 
  * Foundation, either version 2 of the License, or any later version.
  *
  * You should have received a copy of the GNU General Public License
- * along with Auto Load Next Post: Facebook Pixel Tracking.
+ * along with Auto Load Next Post: Pixel Tracking.
  * If not, see <http://www.gnu.org/licenses/>.
  *
- * @package Auto Load Next Post: Facebook Pixel Tracking
+ * @package Auto Load Next Post: Pixel Tracking
  * @author  Auto Load Next Post
  * @link    https://autoloadnextpost.com
  * @license http://opensource.org/licenses/gpl-2.0.php GNU Public License

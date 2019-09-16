@@ -1,11 +1,11 @@
 <?php
 /**
- * Auto Load Next Post: Facebook Pixel Tracking - Admin.
+ * Auto Load Next Post: Pixel Tracking - Admin.
  *
  * @since    2.0.0
  * @author   Sébastien Dumont
  * @category Admin
- * @package  Auto Load Next Post: Facebook Pixel Tracking/Admin
+ * @package  Auto Load Next Post: Pixel Tracking/Admin
  * @license  GPL-2.0+
  */
 
@@ -53,7 +53,7 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking_Admin' ) ) {
 
 				$row_meta = array(
 					'community' => '<a href="' . esc_url( ALNP_FB_PIXEL_SUPPORT_URL ) . '" aria-label="' . esc_attr__( 'Get Support from the Community', 'alnp-facebook-pixel-tracking' ). '" target="_blank">' . esc_attr__( 'Community Support', 'alnp-facebook-pixel-tracking' ) . '</a>',
-					'review' => '<a href="' . esc_url( ALNP_FB_PIXEL_REVIEW_URL ) . '" aria-label="' . esc_attr( __( 'Review Facebook Pixel Tracking for Auto Load Next Post on WordPress.org', 'alnp-facebook-pixel-tracking' ) ) . '" target="_blank">' . __( 'Leave a Review', 'alnp-facebook-pixel-tracking' ) . '</a>',
+					'review' => '<a href="' . esc_url( ALNP_FB_PIXEL_REVIEW_URL ) . '" aria-label="' . esc_attr( __( 'Review Pixel Tracking for Auto Load Next Post on WordPress.org', 'alnp-facebook-pixel-tracking' ) ) . '" target="_blank">' . __( 'Leave a Review', 'alnp-facebook-pixel-tracking' ) . '</a>',
 				);
 
 				$links = array_merge( $links, $row_meta );

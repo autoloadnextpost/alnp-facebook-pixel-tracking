@@ -1,6 +1,6 @@
 <?php
 /**
- * Auto Load Next Post: Facebook Pixel Tracking - Check for Auto Load Next Post Notice.
+ * Auto Load Next Post: Pixel Tracking - Check for Auto Load Next Post Notice.
  *
  * @since    2.0.0
  * @author   Sébastien Dumont
