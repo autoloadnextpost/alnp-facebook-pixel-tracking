@@ -1,7 +1,7 @@
 {
 	"name": "alnp-facebook-pixel-tracking",
 	"title": "Facebook Pixel Tracking for Auto Load Next Post",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"private": false,
 	"contributors": [
 		"autoloadnextpost",
@@ -19,7 +19,7 @@
 	},
 	"requires": "4.5",
 	"requires_php": "5.6",
-	"tested_up_to": "5.2.1",
+	"tested_up_to": "5.2.2",
 	"required_alnp": "1.4.10",
 	"license": "GPL-2.0",
 	"copyright": "Copyright (c) 2019, Sébastien Dumont",
@@ -28,7 +28,8 @@
 	"keywords": [
 		"facebook",
 		"pixel",
-		"tracking"
+		"tracking",
+		"auto-load-next-post"
 	],
 	"dependencies": {
 		"grunt": "^1.0.4"

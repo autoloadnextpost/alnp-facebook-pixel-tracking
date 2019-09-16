@@ -1,10 +1,10 @@
-=== Facebook Pixel Tracking for Auto Load Next Post ===
+=== Pixel Tracking for Auto Load Next Post ===
 Contributors: autoloadnextpost, sebd86
 Tags: Auto Load Next Post, Analytics, Facebook Pixel, Facebook Conversion Pixel, Facebook Pixel Events, Facebook Standard Events, Page Tracking
 Requires PHP: 5.6
 Requires at least: 4.5
-Tested up to: 5.2.1
-Stable tag: 2.0.0
+Tested up to: 5.2.2
+Stable tag: 2.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -72,6 +72,10 @@ You can find more information on the [Facebook Pixel](https://www.facebook.com/b
 Once this plugin is activated, that's it. Facebook Pixel will now track each pageview.
 
 == Changelog ==
+
+= Version 2.0.1 : 16th September 2019 =
+
+* Renamed plugin due to trademark.
 
 = 2.0.0 : 29th May 2019 =
 

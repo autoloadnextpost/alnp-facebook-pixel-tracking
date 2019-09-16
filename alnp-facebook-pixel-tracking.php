@@ -5,7 +5,7 @@
  * Description: Track your page views using Facebook Pixel with Auto Load Next Post.
  * Author: Auto Load Next Post
  * Author URI: https://autoloadnextpost.com
- * Version: 2.0.0
+ * Version: 2.0.1
  * Developer: Sébastien Dumont
  * Developer URI: https://sebastiendumont.com
  * Text Domain: alnp-facebook-pixel-tracking
@@ -45,7 +45,7 @@ if ( ! class_exists( 'ALNP_FB_Pixel_Tracking' ) ) {
 		 * @static
 		 * @since  1.0.0
 		 */
-		public static $version = '2.0.0';
+		public static $version = '2.0.1';
 
 		/**
 		 * Required Auto Load Next Post Version

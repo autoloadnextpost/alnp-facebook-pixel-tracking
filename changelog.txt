@@ -1,4 +1,8 @@
-*** Facebook Pixel Tracking for Auto Load Next Post - Changelog ***
+*** Auto Load Next Post: Facebook Pixel Tracking - Changelog ***
+
+16th September 2019 - Version 2.0.1
+
+* Renamed plugin due to trademark.
 
 29th May 2019 - Version 2.0.0
 
